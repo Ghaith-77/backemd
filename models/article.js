@@ -6,6 +6,6 @@ let articleschema = new schema({
     body : String
 })
 
-let article = mongoose.model("car",articleschema)
+let article = mongoose.model("article",articleschema)
 
 module.exports = article

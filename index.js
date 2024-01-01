@@ -30,11 +30,15 @@ app.get("/getnum", (req, res) => {
   });
 });
 
-app.get("/Article",(req,res)=>{
+app.post("/Article",(req,res)=>{
   let newarticle = new Article()
-  newarticle.title = "ghaith"
-  newarticle.body = "body"
-  res.json(newarticle)
+  newarticle.title = req.body.title
+  newarticle.body = req.body.body
+  newarticle.save()
+  .then(()=>{
+    res.json(newarticle)
+
+  })
 })
 app.get("/saymyname", (req, res) => {
   let age = req.query.age;
